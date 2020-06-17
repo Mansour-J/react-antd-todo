@@ -8,6 +8,9 @@ import { store, persistor } from 'store/app.store';
 
 import { App } from 'containers/app';
 
+// @ts-ignore
+window.store = store;
+
 const targetHTMLElement = document.getElementById('root');
 
 render(<App store={store} storePersistor={persistor} />, targetHTMLElement);

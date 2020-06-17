@@ -1,14 +1,11 @@
 import React from 'react';
 import { Row, Col, Card, PageHeader } from 'antd';
-
-import { Todo } from 'store/todo/models/todo.model';
 import { useDispatch, useSelector } from 'react-redux';
-import { addTodo, removeTodo, toggleTodo } from 'store/todo/actions';
-import { RootState } from 'store/todo/reducers';
 import { AddTodoForm } from 'components/AddTodoForm';
 import { TodoList } from 'components/TodoList';
 import { message } from 'antd';
-
+import { Todo, todoSlice } from 'store/todo';
+import { RootState } from 'store/app.store';
 import './styles.less';
 
 interface TodosContainerProps {}
@@ -19,17 +16,17 @@ export const TodosContainer: React.FunctionComponent<TodosContainerProps> = () =
   const dispatch = useDispatch();
 
   const handleFormSubmit = (todo: Todo): void => {
-    dispatch(addTodo(todo));
+    dispatch(todoSlice.actions.addTodo(todo));
     message.success('Todo added!');
   };
 
   const handleRemoveTodo = (todo: Todo): void => {
-    dispatch(removeTodo(todo));
+    dispatch(todoSlice.actions.removeTodo(todo));
     message.warn('Todo removed!');
   };
 
   const handleTodoToggle = (todo: Todo): void => {
-    dispatch(toggleTodo(todo));
+    dispatch(todoSlice.actions.toggleTodo(todo));
     message.info('Todo state updated!');
   };
 

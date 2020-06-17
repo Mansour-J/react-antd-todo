@@ -1,9 +1,8 @@
 import React from 'react';
 import { Tooltip, Tag, List, Button, Popconfirm, Switch } from 'antd';
 import { CloseOutlined, CheckOutlined } from '@ant-design/icons';
-
 import './styles.less';
-import { Todo } from 'store/todo/models/todo.model';
+import { Todo } from 'store/todo';
 
 interface TodoItemProps {
   todo: Todo;

@@ -1,9 +1,7 @@
 import React from 'react';
-
 import { List } from 'antd';
-
-import { Todo } from 'store/todo/models/todo.model';
 import { TodoItem } from 'components/TodoItem';
+import { Todo } from 'store/todo';
 
 interface TodoListProps {
   todos: Todo[];
